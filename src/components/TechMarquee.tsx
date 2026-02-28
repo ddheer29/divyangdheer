@@ -31,7 +31,7 @@ const TechMarquee: React.FC = () => {
         <div className="marquee-section">
             <div className="marquee-container">
                 {/* Render twice for seamless looping */}
-                {[1, 2].map((set, setIndex) => (
+                {[1, 2].map((_, setIndex) => (
                     <div key={setIndex} className={`marquee-content ${setIndex === 1 ? 'duplicate' : ''}`}>
                         {technologies.map((tech, index) => (
                             <div key={index} className="tech-pill">

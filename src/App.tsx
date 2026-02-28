@@ -1,4 +1,3 @@
-import React from 'react';
 import CustomCursor from './components/CustomCursor';
 import Hero from './components/Hero';
 import TechMarquee from './components/TechMarquee';
