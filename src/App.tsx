@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import CustomCursor from './components/CustomCursor';
+import Hero from './components/Hero';
+import TechMarquee from './components/TechMarquee';
+import About from './components/About';
+import Projects from './components/Projects';
+import Timeline from './components/Timeline';
+import Skills from './components/Skills';
+import Contact from './components/Contact';
+import ScrollToTop from './components/ScrollToTop';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="portfolio-app">
+      <CustomCursor />
+      <nav className="navbar">
+        <div className="navbar-container container">
+          <a href="#home" className="logo">
+            <span className="logo-text">Divyang</span>
+            <span className="logo-dot">.</span>
+          </a>
+          <div className="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#timeline">Journey</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact" className="nav-btn">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        <Hero />
+        <TechMarquee />
+        <About />
+        <Projects />
+        <Timeline />
+        <Skills />
+        <Contact />
+      </main>
+
+      <footer className="footer">
+        <div className="container">
+          <p>&copy; {new Date().getFullYear()} Divyang Dheer. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <ScrollToTop />
+    </div>
+  );
 }
 
-export default App
+export default App;

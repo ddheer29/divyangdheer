@@ -1,0 +1,90 @@
+.marquee-section {
+    padding: 1rem 0;
+    background: rgba(17, 24, 39, 0.4);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.marquee-container {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 3rem;
+    padding: 0 1.5rem;
+    animation: scroll 30s linear infinite;
+    align-items: center;
+}
+
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+.tech-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--surface-color);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    color: var(--text-muted);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.tech-pill:hover {
+    color: var(--secondary-color);
+    border-color: rgba(6, 182, 212, 0.4);
+    box-shadow: 0 0 15px var(--secondary-glow);
+    transform: translateY(-2px);
+}
+
+/* Duplicated content block for seamless looping */
+.marquee-content.duplicate {
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Fade Edges */
+.marquee-section::before,
+.marquee-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-section::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-color), transparent);
+}
+
+.marquee-section::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-color), transparent);
+}

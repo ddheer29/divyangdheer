@@ -1,0 +1,137 @@
+{
+    "personal": {
+        "name": "Divyang Dheer",
+        "profession": "React Native Developer",
+        "email": "divyangdheer11@gmail.com",
+        "photoUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=facearea&facepad=2&w=800&h=800&q=80",
+        "about": "I’m a React Native, React.js & Node.js Developer with 2+ years of experience building scalable, production-ready web and mobile applications. So far, I have worked on 7 production-level mobile apps, and I’m currently working on an exciting project that allows users to build fully functional mobile apps without writing a single line of code."
+    },
+    "skillsCategories": [
+        {
+            "title": "📱 Mobile App Development (React Native)",
+            "items": [
+                "End-to-end app development",
+                "Clean & scalable architecture",
+                "Pixel-perfect UI development",
+                "API integration",
+                "Offline-first applications",
+                "Deep linking",
+                "Push notifications",
+                "Location tracking",
+                "Payment gateway integration"
+            ]
+        },
+        {
+            "title": "🌐 Web Development (React.js)",
+            "items": [
+                "Responsive web applications",
+                "Dashboard & admin panel development",
+                "API integration",
+                "Performance optimization",
+                "Clean component architecture"
+            ]
+        },
+        {
+            "title": "🛠 Backend Development (Node.js)",
+            "items": [
+                "REST API development",
+                "Authentication & authorization",
+                "Database integration",
+                "Scalable backend architecture"
+            ]
+        },
+        {
+            "title": "🚀 Deployment & Release Management",
+            "items": [
+                "Google Play Store deployment",
+                "Apple App Store deployment",
+                "iOS build management",
+                "Handling certificates, provisioning profiles, TestFlight, etc."
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "id": "p1",
+            "title": "E-Commerce Mobile App",
+            "description": "A fully functional e-commerce app built with React Native. Includes payment gateway integration and real-time inventory tracking.",
+            "thumbnailUrl": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=800&q=80",
+            "appStoreUrl": "#",
+            "playStoreUrl": "#",
+            "images": [
+                "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=800&q=80",
+                "https://images.unsplash.com/photo-1555421689-491a97ff2040?w=800&q=80",
+                "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&q=80"
+            ]
+        },
+        {
+            "id": "p2",
+            "title": "No-Code App Builder",
+            "description": "An exciting project allowing users to build fully functional mobile apps without writing code.",
+            "thumbnailUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+            "images": [
+                "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+                "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80"
+            ]
+        },
+        {
+            "id": "p3",
+            "title": "Admin Dashboard",
+            "description": "A responsive React.js dashboard for visualizing user data and managing content.",
+            "thumbnailUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+            "images": [
+                "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+                "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80"
+            ]
+        },
+        {
+            "id": "p4",
+            "title": "Healthcare Management App",
+            "description": "Offline-first application built to manage patient records and appointments locally, syncing when online.",
+            "thumbnailUrl": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80",
+            "appStoreUrl": "#",
+            "images": [
+                "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80",
+                "https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=80"
+            ]
+        }
+    ],
+    "timeline": [
+        {
+            "period": "2025 Apr - Current",
+            "title": "Granitestack",
+            "role": "React Native Developer",
+            "description": "Developing robust mobile applications with clean architecture and leading the frontend development."
+        },
+        {
+            "period": "2024 Sept - 2025 April",
+            "title": "OSOS PVT LTD",
+            "role": "Mobile Developer",
+            "description": "Worked on enterprise-level mobile applications, implementing deep linking and push notifications."
+        },
+        {
+            "period": "2024 May - 2024 Oct",
+            "title": "Banao Technologies",
+            "role": "React Native Intern/Developer",
+            "description": "Contributed to UI development and integrated RESTful APIs into multiple mobile projects."
+        },
+        {
+            "period": "2020 - 2024",
+            "title": "B.Tech CSE",
+            "role": "Student",
+            "description": "Studied Computer Science Engineering, building a strong foundation in programming, data structures, and algorithms."
+        }
+    ],
+    "skills": [
+        "React Native",
+        "Node.js",
+        "MongoDB",
+        "REST API",
+        "JavaScript",
+        "TypeScript",
+        "React.js",
+        "Tailwind CSS",
+        "Git",
+        "Redux"
+    ]
+}
