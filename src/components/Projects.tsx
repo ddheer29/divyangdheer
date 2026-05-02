@@ -88,6 +88,21 @@ const FlipCard: React.FC<FlipCardProps> = ({ project, index, onClick }) => {
 
 const Projects: React.FC = () => {
   const { projects } = data;
+
+  const trimoraImagesMap = import.meta.glob('../assets/trimora/*.png', { eager: true }) as Record<string, { default: string }>;
+  const trimoraImageUrls = Object.values(trimoraImagesMap).map(mod => mod.default);
+
+  const projectsWithImages = projects.map(p => {
+    if (p.id === 'trimora' && trimoraImageUrls.length > 0) {
+      return {
+        ...p,
+        thumbnailUrl: trimoraImageUrls[0],
+        images: trimoraImageUrls
+      };
+    }
+    return p;
+  });
+
   const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -138,7 +153,7 @@ const Projects: React.FC = () => {
         </motion.h2>
 
         <div className="projects-grid">
-          {projects.map((project, index) => (
+          {projectsWithImages.map((project, index) => (
             <FlipCard
               key={project.id}
               project={project}

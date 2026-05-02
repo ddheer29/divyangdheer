@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle2, Code2, Globe, Server, Rocket } from 'lucide-react';
 import './About.css';
 import data from '../data/dummyData.json';
+import profilePhoto from '../assets/profile/profile_photo.png';
 
 const categoryIcons = [Code2, Globe, Server, Rocket];
 
@@ -98,7 +99,7 @@ const About: React.FC = () => {
             <div className="about-bio-top">
               <div className="about-avatar">
                 <img
-                  src={personal.photoUrl}
+                  src={profilePhoto || personal.photoUrl}
                   alt={personal.name}
                   className="about-avatar-img"
                 />
