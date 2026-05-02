@@ -4,46 +4,37 @@ import { ArrowUp } from 'lucide-react';
 import './ScrollToTop.css';
 
 const ScrollToTop: React.FC = () => {
-    const [isVisible, setIsVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
 
-    // Show button when page is scrolled down
-    const toggleVisibility = () => {
-        if (window.scrollY > 500) {
-            setIsVisible(true);
-        } else {
-            setIsVisible(false);
-        }
-    };
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 400);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
-    };
+  const scrollUp = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    useEffect(() => {
-        window.addEventListener('scroll', toggleVisibility);
-        return () => window.removeEventListener('scroll', toggleVisibility);
-    }, []);
-
-    return (
-        <AnimatePresence>
-            {isVisible && (
-                <motion.button
-                    className="scroll-to-top"
-                    onClick={scrollToTop}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    transition={{ duration: 0.3 }}
-                    aria-label="Scroll to top"
-                >
-                    <ArrowUp size={24} />
-                </motion.button>
-            )}
-        </AnimatePresence>
-    );
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.button
+          id="scroll-to-top"
+          className="scroll-to-top"
+          onClick={scrollUp}
+          aria-label="Scroll to top"
+          initial={{ opacity: 0, scale: 0.5, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.5, y: 20 }}
+          whileHover={{ scale: 1.12, y: -3 }}
+          whileTap={{ scale: 0.92 }}
+          transition={{ type: 'spring', damping: 18, stiffness: 300 }}
+        >
+          <ArrowUp size={18} />
+          <div className="stt-ring" />
+        </motion.button>
+      )}
+    </AnimatePresence>
+  );
 };
 
 export default ScrollToTop;

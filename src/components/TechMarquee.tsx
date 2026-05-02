@@ -1,49 +1,42 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './TechMarquee.css';
-import {
-    Code2,
-    Smartphone,
-    Database,
-    Globe,
-    Layout,
-    Server,
-    Terminal,
-    Cpu,
-    Figma,
-    Cloud
-} from 'lucide-react';
 
-const technologies = [
-    { name: 'React Native', icon: <Smartphone size={18} /> },
-    { name: 'React.js', icon: <Globe size={18} /> },
-    { name: 'TypeScript', icon: <Code2 size={18} /> },
-    { name: 'Node.js', icon: <Server size={18} /> },
-    { name: 'Next.js', icon: <Layout size={18} /> },
-    { name: 'Redux Toolkit', icon: <Database size={18} /> },
-    { name: 'Firebase', icon: <Cloud size={18} /> },
-    { name: 'GraphQL', icon: <Cpu size={18} /> },
-    { name: 'Tailwind CSS', icon: <Figma size={18} /> },
-    { name: 'Git & CI/CD', icon: <Terminal size={18} /> },
+const techs = [
+  { name: 'React Native', emoji: '📱' },
+  { name: 'React.js', emoji: '⚛️' },
+  { name: 'Node.js', emoji: '🟢' },
+  { name: 'TypeScript', emoji: '🔷' },
+  { name: 'MongoDB', emoji: '🍃' },
+  { name: 'JavaScript', emoji: '🟡' },
+  { name: 'Redux', emoji: '🔴' },
+  { name: 'Git', emoji: '🔀' },
+  { name: 'REST API', emoji: '🔗' },
+  { name: 'Tailwind CSS', emoji: '🎨' },
+  { name: 'Expo', emoji: '🚀' },
+  { name: 'Firebase', emoji: '🔥' },
 ];
 
 const TechMarquee: React.FC = () => {
-    return (
-        <div className="marquee-section">
-            <div className="marquee-container">
-                {/* Render twice for seamless looping */}
-                {[1, 2].map((_, setIndex) => (
-                    <div key={setIndex} className={`marquee-content ${setIndex === 1 ? 'duplicate' : ''}`}>
-                        {technologies.map((tech, index) => (
-                            <div key={index} className="tech-pill">
-                                {tech.icon}
-                                <span>{tech.name}</span>
-                            </div>
-                        ))}
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+  return (
+    <div className="marquee-section">
+      <div className="marquee-fade-left" />
+      <div className="marquee-fade-right" />
+
+      <motion.div
+        className="marquee-track"
+        animate={{ x: ['0%', '-50%'] }}
+        transition={{ duration: 28, ease: 'linear', repeat: Infinity }}
+      >
+        {[...techs, ...techs].map((tech, i) => (
+          <div key={i} className="marquee-pill">
+            <span className="marquee-emoji">{tech.emoji}</span>
+            <span className="marquee-name">{tech.name}</span>
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
 };
 
 export default TechMarquee;

@@ -1,3 +1,4 @@
+import Scene3D from './components/Scene3D';
 import CustomCursor from './components/CustomCursor';
 import Hero from './components/Hero';
 import TechMarquee from './components/TechMarquee';
@@ -12,7 +13,12 @@ import './App.css';
 function App() {
   return (
     <div className="portfolio-app">
+      {/* Global 3D particle background */}
+      <Scene3D />
+
       <CustomCursor />
+
+      {/* Glassmorphic Navbar */}
       <nav className="navbar">
         <div className="navbar-container container">
           <a href="#home" className="logo">
@@ -41,7 +47,8 @@ function App() {
 
       <footer className="footer">
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} Divyang Dheer. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Divyang Dheer. All rights reserved.</p>
+          <p className="footer-heart">Built with <span>♥</span> using React & Three.js</p>
         </div>
       </footer>
 

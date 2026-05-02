@@ -1,32 +1,30 @@
+/* ====== SCROLL TO TOP 3D ====== */
 .scroll-to-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 999;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 15px var(--primary-glow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 500;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), #6d28d9);
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px var(--primary-glow), 0 0 40px rgba(139, 92, 246, 0.2);
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
 }
 
-.scroll-to-top:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 25px var(--primary-glow);
-}
-
-@media (max-width: 768px) {
-    .scroll-to-top {
-        bottom: 1.5rem;
-        right: 1.5rem;
-        width: 45px;
-        height: 45px;
-    }
+.stt-ring {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1px dashed rgba(139, 92, 246, 0.5);
+  animation: spin-slow 8s linear infinite;
+  pointer-events: none;
 }

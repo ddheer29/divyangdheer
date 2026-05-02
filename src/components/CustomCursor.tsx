@@ -1,68 +1,72 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
 import './CustomCursor.css';
 
 const CustomCursor: React.FC = () => {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [isHovering, setIsHovering] = useState(false);
+  const dotRef = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const mainMainMouseMove = (e: MouseEvent) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
-        };
+  useEffect(() => {
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+    let animId: number;
 
-        const handleMouseOver = (e: MouseEvent) => {
-            // Check if hovering over clickable elements
-            const target = e.target as HTMLElement;
-            if (
-                target.tagName.toLowerCase() === 'a' ||
-                target.tagName.toLowerCase() === 'button' ||
-                target.closest('a') ||
-                target.closest('button') ||
-                target.classList.contains('clickable')
-            ) {
-                setIsHovering(true);
-            } else {
-                setIsHovering(false);
-            }
-        };
+    const onMouseMove = (e: MouseEvent) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (dotRef.current) {
+        dotRef.current.style.left = `${mouseX}px`;
+        dotRef.current.style.top = `${mouseY}px`;
+      }
+    };
 
-        window.addEventListener('mousemove', mainMainMouseMove);
-        window.addEventListener('mouseover', handleMouseOver);
+    const animateRing = () => {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
+      if (ringRef.current) {
+        ringRef.current.style.left = `${ringX}px`;
+        ringRef.current.style.top = `${ringY}px`;
+      }
+      animId = requestAnimationFrame(animateRing);
+    };
 
-        return () => {
-            window.removeEventListener('mousemove', mainMainMouseMove);
-            window.removeEventListener('mouseover', handleMouseOver);
-        };
-    }, []);
+    const onMouseDown = () => {
+      dotRef.current?.classList.add('cursor-click');
+      ringRef.current?.classList.add('cursor-click');
+    };
+    const onMouseUp = () => {
+      dotRef.current?.classList.remove('cursor-click');
+      ringRef.current?.classList.remove('cursor-click');
+    };
 
-    return (
-        <>
-            {/* Small dot following exactly */}
-            <motion.div
-                className="cursor-dot"
-                animate={{
-                    x: mousePosition.x - 4,
-                    y: mousePosition.y - 4,
-                    scale: isHovering ? 0 : 1,
-                }}
-                transition={{ type: 'tween', ease: 'linear', duration: 0 }}
-            />
+    const onMouseEnterLink = () => ringRef.current?.classList.add('cursor-hover');
+    const onMouseLeaveLink = () => ringRef.current?.classList.remove('cursor-hover');
 
-            {/* Larger glowing ring following with physics */}
-            <motion.div
-                className="cursor-ring"
-                animate={{
-                    x: mousePosition.x - 16,
-                    y: mousePosition.y - 16,
-                    scale: isHovering ? 1.5 : 1,
-                    borderColor: isHovering ? 'rgba(6, 182, 212, 0.8)' : 'rgba(139, 92, 246, 0.5)',
-                    backgroundColor: isHovering ? 'rgba(6, 182, 212, 0.1)' : 'transparent',
-                }}
-                transition={{ type: 'spring', mass: 0.1, stiffness: 150, damping: 15 }}
-            />
-        </>
-    );
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mousedown', onMouseDown);
+    window.addEventListener('mouseup', onMouseUp);
+
+    const links = document.querySelectorAll('a, button, [role="button"]');
+    links.forEach((el) => {
+      el.addEventListener('mouseenter', onMouseEnterLink);
+      el.addEventListener('mouseleave', onMouseLeaveLink);
+    });
+
+    animId = requestAnimationFrame(animateRing);
+
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mousedown', onMouseDown);
+      window.removeEventListener('mouseup', onMouseUp);
+      cancelAnimationFrame(animId);
+    };
+  }, []);
+
+  return (
+    <>
+      <div ref={dotRef} className="cursor-dot" />
+      <div ref={ringRef} className="cursor-ring" />
+    </>
+  );
 };
 
 export default CustomCursor;

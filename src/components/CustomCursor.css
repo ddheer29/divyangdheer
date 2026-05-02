@@ -1,31 +1,54 @@
-.cursor-dot,
-.cursor-ring {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9999;
-    border-radius: 50%;
+/* ====== CUSTOM CURSOR ====== */
+* {
+  cursor: none !important;
 }
 
 .cursor-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--secondary-color);
-    box-shadow: 0 0 10px var(--secondary-glow);
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  background: var(--secondary-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, background 0.2s;
+  box-shadow: 0 0 8px var(--secondary-glow);
 }
 
 .cursor-ring {
-    width: 32px;
-    height: 32px;
-    border: 1.5px solid rgba(139, 92, 246, 0.5);
-    box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(139, 92, 246, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
-@media (max-width: 768px) {
+/* Hover state (over links/buttons) */
+.cursor-ring.cursor-hover {
+  width: 54px;
+  height: 54px;
+  border-color: var(--primary-color);
+  background: rgba(139, 92, 246, 0.07);
+}
 
-    .cursor-dot,
-    .cursor-ring {
-        display: none;
-    }
+/* Click state */
+.cursor-dot.cursor-click {
+  transform: translate(-50%, -50%) scale(0.5);
+  background: var(--primary-color);
+}
+
+.cursor-ring.cursor-click {
+  width: 28px;
+  height: 28px;
+  border-color: var(--secondary-color);
+}
+
+@media (hover: none) {
+  * { cursor: auto !important; }
+  .cursor-dot, .cursor-ring { display: none; }
 }
