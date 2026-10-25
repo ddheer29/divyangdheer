@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const accessKey =
-    import.meta.env.WEB3FORMS_ACCESS_KEY ||
+    import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ||
     (data.personal as { web3formsAccessKey?: string }).web3formsAccessKey ||
     "";
 
