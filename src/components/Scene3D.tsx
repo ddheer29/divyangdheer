@@ -1,28 +1,34 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
+const generateParticles = (count = 2200) => {
+  const positions = new Float32Array(count * 3);
+  const colors = new Float32Array(count * 3);
+  let seed = 42;
+  const rnd = () => {
+    seed = (seed * 1664525 + 1013904223) % 4294967296;
+    return seed / 4294967296;
+  };
+
+  for (let i = 0; i < count; i++) {
+    positions[i * 3] = (rnd() - 0.5) * 60;
+    positions[i * 3 + 1] = (rnd() - 0.5) * 60;
+    positions[i * 3 + 2] = (rnd() - 0.5) * 40;
+
+    const t = rnd();
+    // Purple to cyan gradient palette
+    colors[i * 3] = 0.34 + t * 0.22;      // R
+    colors[i * 3 + 1] = 0.23 + t * 0.48;  // G
+    colors[i * 3 + 2] = 0.96 - t * 0.13;  // B
+  }
+  return [positions, colors] as const;
+};
+
+const [positions, colors] = generateParticles();
+
 const ParticleField: React.FC = () => {
   const mesh = useRef<THREE.Points>(null!);
-
-  const [positions, colors] = useMemo(() => {
-    const count = 2200;
-    const positions = new Float32Array(count * 3);
-    const colors = new Float32Array(count * 3);
-
-    for (let i = 0; i < count; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 60;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 60;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 40;
-
-      const t = Math.random();
-      // Purple to cyan gradient palette
-      colors[i * 3] = 0.34 + t * 0.22;      // R
-      colors[i * 3 + 1] = 0.23 + t * 0.48;  // G
-      colors[i * 3 + 2] = 0.96 - t * 0.13;  // B
-    }
-    return [positions, colors];
-  }, []);
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();

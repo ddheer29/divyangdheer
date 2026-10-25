@@ -16,23 +16,6 @@
   pointer-events: none;
 }
 
-.section-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--primary-color);
-  margin-bottom: 0.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.section-label span {
-  font-family: 'Outfit', monospace;
-  opacity: 0.5;
-}
-
 /* 3D Tilt Card */
 .tilt-card {
   position: relative;

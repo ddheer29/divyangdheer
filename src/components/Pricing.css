@@ -1,0 +1,542 @@
+/* ====== PRICING SECTION ====== */
+.pricing-section {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+.pricing-bg-glow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 750px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pricing-header-wrap {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pricing-header-desc {
+  max-width: 620px;
+  margin: 1.2rem auto 0;
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Currency Toggle */
+.currency-toggle-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.currency-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  gap: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.currency-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 100px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.currency-btn:hover {
+  color: var(--text-main);
+}
+
+.currency-btn.active {
+  background: linear-gradient(135deg, var(--primary-color), #6d28d9);
+  color: #fff;
+  box-shadow: 0 2px 12px var(--primary-glow);
+}
+
+/* Hourly Banner */
+.hourly-card {
+  margin-bottom: 2.5rem;
+  padding: 1.6rem 2.2rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(139, 92, 246, 0.08));
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  position: relative;
+  z-index: 1;
+}
+
+.hourly-left {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.hourly-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(6, 182, 212, 0.15);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  color: #06B6D4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hourly-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #06B6D4;
+  margin-bottom: 0.2rem;
+}
+
+.hourly-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.hourly-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  max-width: 520px;
+}
+
+.hourly-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.hourly-price-box {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.hourly-price-val {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, #06B6D4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.hourly-price-unit {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.hourly-cta {
+  white-space: nowrap;
+}
+
+/* Pricing Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.6rem;
+  border-radius: 16px;
+  background: rgba(17, 24, 39, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(139, 92, 246, 0.35);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(139, 92, 246, 0.1);
+}
+
+/* Popular Card Highlight */
+.popular-card {
+  background: linear-gradient(180deg, rgba(26, 32, 53, 0.9), rgba(17, 24, 39, 0.85));
+  border: 1px solid rgba(139, 92, 246, 0.55);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45), 0 0 30px rgba(139, 92, 246, 0.2);
+  transform: scale(1.02);
+}
+
+.popular-card:hover {
+  transform: scale(1.02) translateY(-6px);
+  border-color: rgba(139, 92, 246, 0.8);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 40px rgba(139, 92, 246, 0.3);
+}
+
+.popular-badge-strip {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.85rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 15px var(--primary-glow);
+  white-space: nowrap;
+}
+
+.pricing-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.pricing-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popular-card .pricing-icon-wrap {
+  background: rgba(139, 92, 246, 0.25);
+  border-color: var(--primary-color);
+  color: #fff;
+}
+
+.tier-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  padding: 0.2rem 0.65rem;
+  border-radius: 100px;
+}
+
+.tier-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.tier-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  min-height: 48px;
+  margin-bottom: 1.2rem;
+}
+
+/* Price Box */
+.tier-price-box {
+  padding: 1rem 0;
+  margin-bottom: 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.price-prefix {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.price-number-row {
+  display: flex;
+  align-items: baseline;
+  overflow: hidden;
+}
+
+.price-amount {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.popular-card .price-amount {
+  background: linear-gradient(135deg, #fff 30%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Deliverables */
+.tier-deliverables {
+  flex: 1;
+  margin-bottom: 1.6rem;
+}
+
+.deliverables-title {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+  margin-bottom: 0.8rem;
+}
+
+.tier-deliverables ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.tier-deliverables li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.82rem;
+  color: #e2e8f0;
+  line-height: 1.4;
+}
+
+.tier-check-icon {
+  color: #10B981;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.tier-footer {
+  margin-top: auto;
+}
+
+.tier-cta-btn {
+  width: 100%;
+  justify-content: center;
+  font-size: 0.84rem;
+}
+
+/* Bottom Grid (Terms & Guarantees) */
+.pricing-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+  margin-top: 3.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.payment-milestone-panel,
+.guarantees-panel {
+  padding: 2.2rem;
+  border-radius: 16px;
+  background: rgba(17, 24, 39, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.panel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.panel-badge.green-badge {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #34D399;
+}
+
+.panel-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.panel-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.6rem;
+}
+
+/* Milestone steps */
+.milestones-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.milestone-step-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.milestone-step-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  background: rgba(139, 92, 246, 0.15);
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.milestone-step-body h5 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.milestone-step-body p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Guarantees list */
+.guarantees-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.guarantees-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  color: #e2e8f0;
+}
+
+.guarantee-icon-wrap {
+  color: #10B981;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.note-card {
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.note-card p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.note-card strong {
+  color: #cbd5e1;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .popular-card {
+    transform: none;
+  }
+  .popular-card:hover {
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 860px) {
+  .hourly-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hourly-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .pricing-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hourly-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .hourly-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}

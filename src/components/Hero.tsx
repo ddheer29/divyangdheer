@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Torus, MeshDistortMaterial, Float, Sphere } from '@react-three/drei';
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Mail, Download } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Download, Rocket, ArrowRight } from 'lucide-react';
 import './Hero.css';
 import personalData from '../data/dummyData.json';
 import * as THREE from 'three';
@@ -119,31 +119,36 @@ const Hero: React.FC = () => {
         >
           <motion.div variants={itemVariants} className="hero-badge">
             <span className="badge-dot" />
-            Available for work
+            <span>Available for Freelance & Contract Projects</span>
           </motion.div>
 
-          <motion.h2 variants={itemVariants} className="hero-greeting">
-            Hello, I'm
-          </motion.h2>
-          <motion.h1 variants={itemVariants} className="hero-name">
-            {personal.name}
-          </motion.h1>
-          <motion.div variants={itemVariants} className="hero-profession-wrap">
+          <motion.div variants={itemVariants} className="hero-intro-lead">
+            <span className="hero-greeting">Hi, I'm {personal.name}</span>
+            <span className="hero-intro-separator">•</span>
             <span className="hero-profession-tag">{personal.profession}</span>
           </motion.div>
+
+          <motion.h1 variants={itemVariants} className="hero-name">
+            {personal.heroTagline || "I build & launch production-grade iOS & Android apps that scale."}
+          </motion.h1>
+
           <motion.p variants={itemVariants} className="hero-description">
-            Building scalable, production-ready web and mobile applications with
-            cutting-edge technologies. Let's create something extraordinary together.
+            {personal.heroSubline || "End-to-end mobile engineering with React Native & Node.js. From pixel-perfect Figma screens to App Store & Google Play approval — zero stress, zero rejections."}
           </motion.p>
 
           <motion.div variants={itemVariants} className="hero-actions">
             <div className="hero-btns">
-              <a href="#projects" className="btn-primary">
-                View Work
+              <a href="#contact" className="btn-primary hero-btn-main">
+                <Rocket size={17} />
+                <span>Start a Project</span>
               </a>
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-secondary">
-                <span>Download CV</span>
-                <Download size={16} />
+              <a href="#services" className="btn-secondary">
+                <span>View Services</span>
+                <ArrowRight size={16} />
+              </a>
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-ghost">
+                <span>Resume</span>
+                <Download size={15} />
               </a>
             </div>
             <div className="hero-socials">
@@ -172,7 +177,7 @@ const Hero: React.FC = () => {
           </motion.div>
         </motion.div>
 
-        {/* Stats */}
+        {/* Stats / Trust Bar */}
         <motion.div
           className="hero-stats"
           initial={{ opacity: 0, y: 30 }}
@@ -180,18 +185,23 @@ const Hero: React.FC = () => {
           transition={{ delay: 1.2, duration: 0.8 }}
         >
           <div className="hero-stat-card">
-            <span className="hero-stat-number">2+</span>
-            <span className="hero-stat-label">Years Experience</span>
-          </div>
-          <div className="hero-stat-divider" />
-          <div className="hero-stat-card">
-            <span className="hero-stat-number">7</span>
+            <span className="hero-stat-number">7+</span>
             <span className="hero-stat-label">Production Apps</span>
           </div>
           <div className="hero-stat-divider" />
           <div className="hero-stat-card">
-            <span className="hero-stat-number">10+</span>
-            <span className="hero-stat-label">Technologies</span>
+            <span className="hero-stat-number">100%</span>
+            <span className="hero-stat-label">Store Approval</span>
+          </div>
+          <div className="hero-stat-divider" />
+          <div className="hero-stat-card">
+            <span className="hero-stat-number">4-8 wks</span>
+            <span className="hero-stat-label">MVP Velocity</span>
+          </div>
+          <div className="hero-stat-divider" />
+          <div className="hero-stat-card">
+            <span className="hero-stat-number">2+ Yrs</span>
+            <span className="hero-stat-label">React Native Exp</span>
           </div>
         </motion.div>
       </div>

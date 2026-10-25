@@ -1,11 +1,131 @@
 {
     "personal": {
         "name": "Divyang Dheer",
-        "profession": "React Native, React & Backend Developer",
+        "profession": "Freelance React Native & Mobile Specialist",
         "email": "divyangdheer11@gmail.com",
         "photoUrl": "/src/assets/profile/profile_photo.png",
-        "about": "I’m a React Native, React.js & Node.js Developer with 2+ years of experience building scalable, production-ready web and mobile applications. So far, I have worked on 7 production-level mobile apps, and I’m currently working on an exciting project that allows users to build fully functional mobile apps without writing a single line of code."
+        "about": "I’m a React Native & Node.js specialist with 2+ years of experience building and shipping high-performance, production-ready mobile and web applications. Having delivered 7 production-grade mobile apps to the App Store and Google Play, I partner with founders and businesses to turn ideas and Figma designs into revenue-generating, scalable mobile products.",
+        "heroTagline": "I build & launch production-grade iOS & Android apps that scale.",
+        "heroSubline": "End-to-end mobile development with React Native & Node.js. From pixel-perfect UI to App Store & Google Play approval — zero stress, zero rejections.",
+        "availability": "Available for new projects",
+        "web3formsAccessKey": "e99c12c8-002d-41a7-80c4-8edab55a3221"
     },
+    "services": [
+        {
+            "id": "mvp-dev",
+            "title": "0 to 1 Mobile MVP Development",
+            "tag": "Most Popular",
+            "timeline": "4 - 8 Weeks",
+            "description": "Turn your product idea or Figma designs into a fully functional, production-ready iOS and Android app ready for real users and investors.",
+            "deliverables": [
+                "Pixel-perfect React Native UI matching Figma",
+                "Cross-platform iOS & Android single codebase",
+                "Authentication, DB & REST/GraphQL API integration",
+                "Weekly TestFlight & Google Play internal builds",
+                "Push notifications & analytics setup"
+            ]
+        },
+        {
+            "id": "store-launch",
+            "title": "App Store & Play Store Launch",
+            "tag": "Zero Rejections",
+            "timeline": "1 - 2 Weeks",
+            "description": "Never worry about confusing certificates, privacy manifests, or Apple/Google rejections. I handle the entire release process from start to live approval.",
+            "deliverables": [
+                "Apple Developer & Google Play Console setup",
+                "iOS provisioning profiles, certificates & signing",
+                "Apple Privacy Manifest & Google Data Safety forms",
+                "Review compliance audit & fast rejection resolution",
+                "Production release management & phased rollout"
+            ]
+        },
+        {
+            "id": "perf-modernization",
+            "title": "Performance Tuning & Refactoring",
+            "tag": "60 FPS Native Feel",
+            "timeline": "2 - 4 Weeks",
+            "description": "Upgrade sluggish or outdated apps into blazing-fast mobile experiences with buttery-smooth animations, smaller bundles, and offline support.",
+            "deliverables": [
+                "Hermes engine & Reanimated 3 optimization",
+                "Memory leak detection & UI thread profiling",
+                "Offline-first caching (MMKV / SQLite)",
+                "Payment gateway integration (Stripe, Razorpay, IAP)",
+                "Upgrading legacy React Native to latest versions"
+            ]
+        },
+        {
+            "id": "fullstack-backend",
+            "title": "Full-Stack Backend & Mobile APIs",
+            "tag": "End-to-End",
+            "timeline": "Flexible",
+            "description": "Need more than just mobile UI? I build the scalable Node.js backend infrastructure, APIs, and databases your mobile application depends on.",
+            "deliverables": [
+                "High-performance REST & WebSocket APIs with Node.js",
+                "Scalable database architecture (MongoDB / PostgreSQL)",
+                "Secure JWT / OAuth authentication & RBAC",
+                "Cloud deployment (AWS / DigitalOcean / Render)",
+                "Third-party integrations (Twilio, SendGrid, Firebase)"
+            ]
+        }
+    ],
+    "whyMe": {
+        "title": "Why Founders & Teams Choose Me",
+        "subtitle": "Freelancing done right: enterprise-quality execution with the speed and agility of an independent specialist.",
+        "stats": [
+            { "value": "7+", "label": "Production Apps Shipped" },
+            { "value": "100%", "label": "App Store Approval Rate" },
+            { "value": "60 FPS", "label": "Native Performance" },
+            { "value": "< 24h", "label": "Communication Response" }
+        ],
+        "pillars": [
+            {
+                "icon": "Zap",
+                "title": "Direct Communication, Zero Middlemen",
+                "description": "No account managers playing telephone. You speak directly to the engineer designing and building your product, resulting in 3x faster turnaround times."
+            },
+            {
+                "icon": "ShieldCheck",
+                "title": "100% Store Approval Guarantee",
+                "description": "I know Apple and Google store guidelines inside out. Every screen and feature is pre-vetted against Apple Review and Google Play policies so your launch is never delayed."
+            },
+            {
+                "icon": "Code2",
+                "title": "Clean, Scalable Architecture",
+                "description": "Strict TypeScript, modular component structure, and comprehensive documentation. When your startup is ready to hire an in-house team, they can step in effortlessly."
+            },
+            {
+                "icon": "Smartphone",
+                "title": "Weekly TestFlight Demos",
+                "description": "You never have to guess what's being built. Every week you receive a fresh build on your phone via TestFlight & Google Play Internal Testing to test real features."
+            }
+        ]
+    },
+    "faqs": [
+        {
+            "question": "How long does it take to develop a complete mobile MVP?",
+            "answer": "Most MVPs with 6–12 core screens, user authentication, core workflow logic, and API integrations take between 4 to 8 weeks. We break the project into clear weekly milestones, so you can test working builds on your phone from week 2."
+        },
+        {
+            "question": "Can you handle the entire Apple App Store and Google Play launch process?",
+            "answer": "Yes, 100%! Store deployment is one of the biggest friction points for founders. I handle Apple Developer & Google Play Console setup, iOS certificates, provisioning profiles, privacy manifests, data safety questionnaires, screenshot prep, and coordinate with review teams until the app is live."
+        },
+        {
+            "question": "How do we work together (Pricing & Payment Structure)?",
+            "answer": "I offer two flexible models: Fixed-Price Milestones for well-scoped MVPs and defined deliverables (providing total budget predictability), or Weekly / Monthly Sprints for evolving products where scope shifts dynamically as user feedback comes in."
+        },
+        {
+            "question": "I already have Figma designs and a backend team. Can you work with them?",
+            "answer": "Yes, absolutely! I regularly collaborate with design and backend teams. I convert Figma designs into pixel-perfect, responsive React Native screens and integrate with your existing REST, GraphQL, or Firebase backend seamlessly."
+        },
+        {
+            "question": "What happens after the app is launched? Do you offer support?",
+            "answer": "Every completed project comes with 30 days of complimentary post-launch bug fixing and support to ensure a rock-solid release. After that, I offer flexible monthly maintenance retainers for OS compatibility updates, new features, and performance monitoring."
+        },
+        {
+            "question": "Why choose React Native over native Swift/Kotlin?",
+            "answer": "React Native allows us to write a single TypeScript codebase that compiles into genuine native UI for both iOS and Android. This cuts your development and maintenance costs by almost 50% while getting your product into users' hands in half the time, with 60 FPS performance."
+        }
+    ],
     "skillsCategories": [
         {
             "title": "📱 Mobile App Development (React Native)",
@@ -140,5 +260,91 @@
         "Tailwind CSS",
         "Git",
         "Redux"
-    ]
+    ],
+    "pricing": {
+        "title": "Transparent Pricing & Engagements",
+        "subtitle": "Clear, honest rates tailored for founders, startups, and growing brands. Switch between INR and USD.",
+        "hourly": {
+            "inr": { "rate": "₹500", "unit": "/ hour", "desc": "Ideal for ad-hoc tasks, consultations, and flexible ongoing sprints with weekly timesheets." },
+            "usd": { "rate": "$18", "unit": "/ hour", "desc": "Direct international starting rate. Transparent weekly tracking with zero minimum commitments." }
+        },
+        "tiers": [
+            {
+                "id": "quick-tasks",
+                "name": "Quick Tasks & Fixes",
+                "tag": "Fast Turnaround",
+                "price": { "inr": "₹1,500", "usd": "$40" },
+                "priceSuffix": "starting at",
+                "description": "For small improvements, critical bug fixes, or minor tweaks to existing mobile applications.",
+                "deliverables": [
+                    "Bug fixes & UI polish (24 - 48h)",
+                    "Minor feature or screen updates",
+                    "Small API integration / fixes",
+                    "Tested on physical iOS & Android devices"
+                ],
+                "cta": "Request Quick Fix"
+            },
+            {
+                "id": "feature-dev",
+                "name": "Feature Development",
+                "tag": "Modular & Scalable",
+                "price": { "inr": "₹8,000", "usd": "$200" },
+                "priceSuffix": "starting at",
+                "description": "For businesses that need complete new features, flows, or integrations added to existing apps.",
+                "deliverables": [
+                    "API integration & authentication / OTP flow",
+                    "New screens & interactive user journeys",
+                    "Push notifications & deep linking",
+                    "Payment gateway (Stripe/Razorpay)",
+                    "Clean, documented component code"
+                ],
+                "cta": "Build a Feature"
+            },
+            {
+                "id": "mvp-app",
+                "name": "Custom Mobile App MVP",
+                "tag": "Most Popular",
+                "isPopular": true,
+                "price": { "inr": "₹75,000", "usd": "$1,500" },
+                "priceSuffix": "starting at",
+                "description": "For startups and businesses looking to build a full-fledged cross-platform mobile app for iOS and Android.",
+                "deliverables": [
+                    "End-to-end React Native cross-platform app",
+                    "Figma to pixel-perfect responsive UI",
+                    "State management & API / DB architecture",
+                    "Weekly TestFlight & Play Console builds",
+                    "Testing & store deployment assistance",
+                    "30 days complimentary post-launch support"
+                ],
+                "cta": "Launch Your MVP"
+            },
+            {
+                "id": "maintenance",
+                "name": "Ongoing Maintenance",
+                "tag": "Dedicated Support",
+                "price": { "inr": "₹10,000", "usd": "$250" },
+                "priceSuffix": "/ month",
+                "description": "Keep your mobile app fast, secure, and fully compatible with new iOS and Android releases.",
+                "deliverables": [
+                    "Continuous bug fixing & minor updates",
+                    "React Native & library dependency updates",
+                    "iOS & Android OS compatibility patches",
+                    "Performance tuning & crash monitoring",
+                    "Priority communication channel"
+                ],
+                "cta": "Retain Maintenance"
+            }
+        ],
+        "paymentTerms": [
+            { "step": "40%", "title": "Initial Deposit", "desc": "Project initiation, architecture planning, and environment setup." },
+            { "step": "30%", "title": "Milestone Review", "desc": "Working TestFlight/Android demo of core features and workflows." },
+            { "step": "30%", "title": "Final Handover", "desc": "Full code handover, final testing, and deployment to the App Stores." }
+        ],
+        "guarantees": [
+            "Two full revision rounds included for agreed scope",
+            "Weekly timesheets & transparent reporting for hourly projects",
+            "30 days free bug-fixing guarantee post-launch",
+            "Signed contracts & transparent milestone deliverables"
+        ]
+    }
 }

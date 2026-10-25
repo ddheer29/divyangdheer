@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   X,
@@ -10,8 +10,13 @@ import {
 import "./Projects.css";
 import data from "../data/dummyData.json";
 
+export type ProjectItem = (typeof data.projects)[0] & {
+  appStoreUrl?: string;
+  playStoreUrl?: string;
+};
+
 interface FlipCardProps {
-  project: (typeof data.projects)[0];
+  project: ProjectItem;
   index: number;
   onClick: () => void;
 }
@@ -120,20 +125,27 @@ const Projects: React.FC = () => {
     return p;
   });
 
-  const [selectedProject, setSelectedProject] = useState<
-    (typeof projects)[0] | null
-  >(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const openModal = (project: (typeof projects)[0]) => {
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedProject]);
+
+  const openModal = (project: ProjectItem) => {
     setSelectedProject(project);
     setCurrentImageIndex(0);
-    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setSelectedProject(null);
-    document.body.style.overflow = "auto";
   };
 
   const nextImage = (e: React.MouseEvent) => {
@@ -160,12 +172,12 @@ const Projects: React.FC = () => {
       <div className="container">
         <motion.div
           className="section-label"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span>02</span> — Work
+          <span>03</span> — Featured Work
         </motion.div>
         <motion.h2
           className="section-title"
@@ -218,12 +230,12 @@ const Projects: React.FC = () => {
 
               <div className="modal-header">
                 <h3>{selectedProject.title}</h3>
-                {((selectedProject as any).appStoreUrl ||
-                  (selectedProject as any).playStoreUrl) && (
+                {(selectedProject.appStoreUrl ||
+                  selectedProject.playStoreUrl) && (
                   <div className="store-badges">
-                    {(selectedProject as any).appStoreUrl && (
+                    {selectedProject.appStoreUrl && (
                       <a
-                        href={(selectedProject as any).appStoreUrl}
+                        href={selectedProject.appStoreUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="store-badge-btn"
@@ -246,9 +258,9 @@ const Projects: React.FC = () => {
                         </div>
                       </a>
                     )}
-                    {(selectedProject as any).playStoreUrl && (
+                    {selectedProject.playStoreUrl && (
                       <a
-                        href={(selectedProject as any).playStoreUrl}
+                        href={selectedProject.playStoreUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="store-badge-btn"
